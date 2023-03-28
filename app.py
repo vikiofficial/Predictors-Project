@@ -51,7 +51,9 @@ def predict_label_for_lung(img_path):
 
 @app.route('/', methods = ['GET'])
 def home():
-    return render_template('service.html')
+    with open("index.html", "r") as f:
+        html = f.read()
+    return html
 
 @app.route('/navHeart', methods = ['GET'])
 def navHeart():
